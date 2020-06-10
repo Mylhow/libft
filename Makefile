@@ -14,7 +14,7 @@ SRCS_string	=	$(addprefix string/,\
 					ft_strlen.c)
 SRCS_ctype	=	$(addprefix ctype/,\
 					ft_tolower.c ft_toupper.c ft_isdigit.c ft_isalpha.c\
-					ft_isalnum.c ft_isprint.c ft_isspace.c)
+					ft_isalnum.c ft_isprint.c ft_isspace.c ft_isxdigit.c)
 OBJS		=	$(addprefix $(PATH_OBJ)/,\
 					$(SRCS_string:.c=.o) $(SRCS_ctype:.c=.o))
 INCS		=	$(addprefix $(PATH_INC)/,\

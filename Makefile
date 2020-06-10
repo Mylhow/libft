@@ -12,7 +12,7 @@ PATH_LOG	=	logs
 # List of sources
 SRCS_string	=	$(addprefix string/, ft_strlen.c ft_tolower.c ft_toupper.c)
 OBJS		=	$(addprefix $(PATH_OBJ)/, $(SRCS_string:.c=.o))
-INCS		=	$(addprefix $(PATH_INC)/, libft.h)
+INCS		=	$(addprefix $(PATH_INC)/, libft.h libftstring.h)
 LOG			=	$(addprefix $(PATH_LOG)/, $(NAME).log)
 
 # Commands of compilation

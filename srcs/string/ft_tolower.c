@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "libftstring.h"
 
 int	ft_tolower(int c)
 {

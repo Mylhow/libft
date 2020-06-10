@@ -6,4 +6,5 @@
 # define EXIT_FAILURE 1
 
 size_t	ft_strlen(const char *s);
+int		ft_tolower(int c);
 #endif

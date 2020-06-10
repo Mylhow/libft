@@ -10,7 +10,7 @@ PATH_OBJ	=	objs
 PATH_LOG	=	logs
 
 # List of sources
-SRCS_string	=	string/ft_strlen.c
+SRCS_string	=	string/ft_strlen.c string/ft_tolower.c
 OBJS		=	$(addprefix $(PATH_OBJ)/, $(SRCS_string:.c=.o))
 INCS		=	$(addprefix $(PATH_INC)/, libft.h)
 LOG			=	$(addprefix $(PATH_LOG)/, $(NAME).log)

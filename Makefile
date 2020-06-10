@@ -10,8 +10,10 @@ PATH_OBJ	=	objs
 PATH_LOG	=	logs
 
 # List of sources
-SRCS_string	=	$(addprefix string/, ft_strlen.c ft_tolower.c ft_toupper.c)
-OBJS		=	$(addprefix $(PATH_OBJ)/, $(SRCS_string:.c=.o))
+SRCS_string	=	$(addprefix string/, ft_strlen.c)
+SRCS_ctype	=	$(addprefix ctype/, ft_tolower.c ft_toupper.c)
+OBJS		=	$(addprefix $(PATH_OBJ)/,\
+					$(SRCS_string:.c=.o) $(SRCS_ctype:.c=.o))
 INCS		=	$(addprefix $(PATH_INC)/,\
 					$(addprefix libft, .h _string.h _ctype.h))
 LOG			=	$(addprefix $(PATH_LOG)/, $(NAME).log)
@@ -37,8 +39,8 @@ all:	init $(NAME)
 
 init:
 	@ echo "$(_INFO) Initialize $(NAME)"
-	@ $(shell mkdir -p $(PATH_OBJ) $(PATH_LOG) $(addprefix $(PATH_OBJ)/,\
-	string))
+	@ $(shell mkdir -p $(PATH_OBJ) $(PATH_LOG)\
+		$(addprefix $(PATH_OBJ)/, string ctype))
 
 $(NAME): $(OBJS) $(INCS)
 	@ (set -x; ar rcs $(NAME).a $(OBJS)) >> $(LOG) 2>&1

@@ -10,8 +10,10 @@ PATH_OBJ	=	objs
 PATH_LOG	=	logs
 
 # List of sources
-SRCS_string	=	$(addprefix string/, ft_strlen.c)
-SRCS_ctype	=	$(addprefix ctype/, ft_tolower.c ft_toupper.c ft_isdigit.c)
+SRCS_string	=	$(addprefix string/,\
+					ft_strlen.c)
+SRCS_ctype	=	$(addprefix ctype/,\
+					ft_tolower.c ft_toupper.c ft_isdigit.c ft_isalpha.c)
 OBJS		=	$(addprefix $(PATH_OBJ)/,\
 					$(SRCS_string:.c=.o) $(SRCS_ctype:.c=.o))
 INCS		=	$(addprefix $(PATH_INC)/,\

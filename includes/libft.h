@@ -4,6 +4,6 @@
 # define EXIT_SUCCESS 0
 # define EXIT_FAILURE 1
 
-# include "libftstring.h"
-
+# include "libft_string.h"
+# include "libft_ctype.h"
 #endif

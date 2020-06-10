@@ -10,8 +10,8 @@ PATH_OBJ	=	objs
 PATH_LOG	=	logs
 
 # List of sources
-SRCS		=
-OBJS		=	$(addprefix $(PATH_OBJ)/, $(SRCS:.c=.o))
+SRCS_string	=	string/ft_strlen.c
+OBJS		=	$(addprefix $(PATH_OBJ)/, $(SRCS_string:.c=.o))
 INCS		=	$(addprefix $(PATH_INC)/, libft.h)
 LOG			=	$(addprefix $(PATH_LOG)/, $(NAME).log)
 
@@ -36,7 +36,8 @@ all:	init $(NAME)
 
 init:
 	@ echo "$(_INFO) Initialize $(NAME)"
-	@ $(shell mkdir -p $(PATH_OBJ) $(PATH_LOG))
+	@ $(shell mkdir -p $(PATH_OBJ) $(PATH_LOG) $(addprefix $(PATH_OBJ)/,\
+	string))
 
 $(NAME): $(OBJS) $(INCS)
 	@ (set -x; ar rcs $(NAME).a $(OBJS)) >> $(LOG) 2>&1
@@ -54,3 +55,6 @@ fclean: clean
 	@ $(RM) -rf $(PATH_LOG)
 
 re: fclean all
+
+run: $(NAME)
+	@ (set -x; $(COMP) $(COMP_FLAG) $(COMP_ADD) main.c -L. -lft) >> $(LOG) 2>&1

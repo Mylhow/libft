@@ -9,4 +9,5 @@ int		ft_isalnum(int c);
 int		ft_isprint(int c);
 int		ft_isspace(int c);
 int		ft_isxdigit(int c);
+int     ft_islower(int c);
 #endif

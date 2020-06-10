@@ -3,5 +3,5 @@
 
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-
+int		ft_isdigit(int c);
 #endif

@@ -11,7 +11,7 @@ PATH_LOG	=	logs
 
 # List of sources
 SRCS_string	=	$(addprefix string/,\
-					ft_strlen.c ft_memset.c ft_bzero.c)
+					ft_strlen.c ft_memset.c ft_bzero.c ft_memchr.c)
 SRCS_ctype	=	$(addprefix ctype/,\
 					ft_tolower.c ft_toupper.c ft_isdigit.c ft_isalpha.c\
 					ft_isalnum.c ft_isprint.c ft_isspace.c ft_isxdigit.c\

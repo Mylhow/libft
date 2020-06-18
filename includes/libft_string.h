@@ -22,4 +22,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 void	ft_splitfree(char **ptr);
 char	*ft_chartostr(int c);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strmjoin(char *format, ...);
 #endif

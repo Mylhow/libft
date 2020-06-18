@@ -10,4 +10,5 @@ typedef struct	s_list
 
 void			ft_lstadd_back(t_list **alst, t_list *enew);
 void			ft_lstadd_front(t_list **alst, t_list *enew);
+void			ft_lstdelone(t_list *lst, void (*del)(void *));
 #endif

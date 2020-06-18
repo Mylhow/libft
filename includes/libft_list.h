@@ -9,4 +9,5 @@ typedef struct	s_list
 }				t_list;
 
 void			ft_lstadd_back(t_list **alst, t_list *enew);
+void			ft_lstadd_front(t_list **alst, t_list *enew);
 #endif

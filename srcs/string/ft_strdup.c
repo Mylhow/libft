@@ -1,4 +1,5 @@
 #include "libft_string.h"
+#include "libft_mem.h"
 
 char	*ft_strdup(const char *s1)
 {

@@ -10,16 +10,9 @@ PATH_OBJ	=	objs
 PATH_LOG	=	logs
 
 # List of sources
-SRCS_string	=	$(addprefix string/,\
-					ft_strlen.c ft_memset.c ft_bzero.c ft_memchr.c ft_memrchr.c ft_memcpy.c)
-SRCS_ctype	=	$(addprefix ctype/,\
-					ft_tolower.c ft_toupper.c ft_isdigit.c ft_isalpha.c\
-					ft_isalnum.c ft_isprint.c ft_isspace.c ft_isxdigit.c\
-					ft_islower.c ft_isupper.c)
-OBJS		=	$(addprefix $(PATH_OBJ)/,\
-					$(SRCS_string:.c=.o) $(SRCS_ctype:.c=.o))
-INCS		=	$(addprefix $(PATH_INC)/,\
-					$(addprefix libft, .h _string.h _ctype.h))
+SRCS		=	$(wildcard $(PATH_SRC)/*/*.c)
+OBJS		=	$(addprefix $(PATH_OBJ)/, $(notdir $(SRCS:.c=.o)))
+INCS		=	$(addprefix $(PATH_INC)/, $(addprefix libft, .h _string.h _ctype.h))
 LOG			=	$(addprefix $(PATH_LOG)/, $(NAME).log)
 
 # Commands of compilation
@@ -39,17 +32,18 @@ _SUCCESS	=	[$(_GREEN)SUCCESS$(_RESET)]
 
 # Functions
 all:	init $(NAME)
-	@ echo "$(_SUCCESS) Compilation done"
+	@ echo "$(_SUCCESS) Compilation done in $$(($$(date +%S)-$$(cat  logs/time.log)))s"
+	@ $(RM) -rf $(PATH_LOG)/time.log
 
 init:
+	@ date +%S > $(addprefix $(PATH_LOG)/, time.log)
 	@ echo "$(_INFO) Initialize $(NAME)"
-	@ $(shell mkdir -p $(PATH_OBJ) $(PATH_LOG)\
-		$(addprefix $(PATH_OBJ)/, string ctype))
+	@ $(shell mkdir -p $(PATH_OBJ) $(PATH_LOG))
 
 $(NAME): $(OBJS) $(INCS)
 	@ (set -x; ar rcs $(NAME).a $(OBJS)) >> $(LOG) 2>&1
 
-$(PATH_OBJ)/%.o: $(PATH_SRC)/%.c $(INCS)
+$(PATH_OBJ)/%.o : $(PATH_SRC)/*/%.c $(INCS)
 	@ (set -x; $(COMP) $(COMP_FLAG) $(COMP_ADD) -c $< -o $@) >> $(LOG) 2>&1
 	@ echo "$(_INFO) Compilation of $*"
 

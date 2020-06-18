@@ -14,4 +14,5 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memccpy(void *dst, void const *src, int c, size_t n);
 char	*ft_strdup(const char *s1);
 int		ft_strcmp(char *s1, char *s2);
+char	*ft_strcat(char *s1, const char *s2);
 #endif

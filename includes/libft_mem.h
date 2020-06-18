@@ -7,4 +7,5 @@
 void	*wrmalloc(unsigned long size);
 int		wrfree(void *ptr);
 void	wrdestroy(void);
+void	*ft_calloc(size_t count, size_t size);
 #endif

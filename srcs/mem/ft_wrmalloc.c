@@ -62,12 +62,12 @@ int				wrfree(void *ptr)
 				prev->next = next;
 			else
 				*wrstart = next;
-			return (1);
+			return (EXIT_SUCCESS);
 		}
 		prev = current;
 		current = current->next;
 	}
-	return (0);
+	return (EXIT_FAILURE);
 }
 
 void			wrdestroy(void)

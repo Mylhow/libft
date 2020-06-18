@@ -1,0 +1,13 @@
+#include "libft_string.h"
+#include "libft_mem.h"
+
+char	*ft_chartostr(int c)
+{
+	char *str;
+
+	if (!(str = ft_calloc(2, sizeof(char))))
+		return (0);
+	str[0] = c;
+	str[1] = '\0';
+	return (str);
+}

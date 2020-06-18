@@ -21,4 +21,5 @@ int		ft_charstr(const char hay, const char *needle);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 void	ft_splitfree(char **ptr);
+char	*ft_chartostr(int c);
 #endif

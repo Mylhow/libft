@@ -12,7 +12,7 @@ PATH_LOG	=	logs
 # List of sources
 SRCS		=	$(wildcard $(PATH_SRC)/*/*.c)
 OBJS		=	$(addprefix $(PATH_OBJ)/, $(notdir $(SRCS:.c=.o)))
-INCS		=	$(addprefix $(PATH_INC)/, $(addprefix libft, .h _string.h _ctype.h))
+INCS		=	$(wildcard $(PATH_INC)/*.h)
 LOG			=	$(addprefix $(PATH_LOG)/, $(NAME).log)
 
 # Commands of compilation

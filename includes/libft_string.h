@@ -17,4 +17,6 @@ int		ft_strcmp(char *s1, char *s2);
 char	*ft_strcat(char *s1, const char *s2);
 int		ft_charstr(const char hay, const char *needle);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	**ft_split(char const *s, char c);
+void	ft_splitfree(char **ptr);
 #endif

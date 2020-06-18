@@ -1,34 +1,37 @@
 #include "libft_number.h"
 #include "libft_mem.h"
+#include "libft_string.h"
 
-static	void	itoareccur(char *ptr, long n, int max)
+char			*ft_itoa_base(int n, char *base)
 {
-	(n > 9) ? itoareccur(ptr, n / 10, max - 1) : 0;
-	ptr[max] = (n % 10) + '0';
+	char	*str;
+	int		i;
+	int		sign;
+	int		sizebase;
+
+	sizebase = ft_strlen(base);
+	sign = 1;
+	i = ft_digit_base(n, base);
+	if (!(str = wrmalloc((i + 1) * sizeof(char))))
+		return (NULL);
+	if (n < 0)
+	{
+		str[0] = '-';
+		sign = -1;
+	}
+	i--;
+	if (n == 0)
+		str[i] = '0';
+	while (n != 0)
+	{
+		str[i] = base[(n % sizebase) * sign];
+		n = n / sizebase;
+		i--;
+	}
+	return (str);
 }
 
 char			*ft_itoa(int n)
 {
-	char	*ptr;
-	long	ntmp;
-	int		max;
-
-	ntmp = n;
-	max = (n <= 0) ? 1 : 0;
-	(ntmp < 0) ? ntmp *= -1 : 0;
-	while (ntmp > 0)
-	{
-		ntmp /= 10;
-		max++;
-	}
-	if (!(ptr = wrmalloc((max + 1) * sizeof(char))))
-		return (0);
-	ptr[max] = '\0';
-	if ((ntmp = n) < 0)
-	{
-		ptr[0] = '-';
-		ntmp *= -1;
-	}
-	itoareccur(ptr, ntmp, max - 1);
-	return (ptr);
+	return (ft_itoa_base(n, BASE10));
 }

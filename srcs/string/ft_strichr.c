@@ -2,13 +2,15 @@
 
 int		ft_strichr(const char *str, int charset)
 {
-	int		val;
-	void	*ptr;
+	int i;
 
-	val = -1;
-	if (!(ptr = (void *)ft_memchr(str, charset, ft_strlen(str))))
-		return (-1);
-	if ((val = ptr - (void *)str) < 0)
-		return (-1);
-	return (val);
+	i = -1;
+	if (!str)
+		return (0);
+	while (str[++i])
+	{
+		if (str[i] == charset)
+			return (i + 1);
+	}
+	return (0);
 }

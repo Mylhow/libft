@@ -1,7 +1,7 @@
 .PHONY: all clean fclean re
 
 # Name of file
-NAME		=	libft
+NAME		=	libft.a
 
 # Name directory
 PATH_INC	=	includes
@@ -13,7 +13,7 @@ PATH_LOG	=	logs
 SRCS		=	$(wildcard $(PATH_SRC)/*/*.c)
 OBJS		=	$(addprefix $(PATH_OBJ)/, $(notdir $(SRCS:.c=.o)))
 INCS		=	$(wildcard $(PATH_INC)/*.h)
-LOG			=	$(addprefix $(PATH_LOG)/, $(NAME).log)
+LOG			=	$(addprefix $(PATH_LOG)/, $(patsubst %.a.log,%.log,$(NAME).log))
 
 # Commands of compilation
 COMP		=	clang
@@ -37,11 +37,10 @@ all:	init $(NAME)
 
 init:
 	@ date +%S > $(addprefix $(PATH_LOG)/, time.log)
-	@ echo "$(_INFO) Initialize $(NAME)"
 	@ $(shell mkdir -p $(PATH_OBJ) $(PATH_LOG))
 
 $(NAME): $(OBJS) $(INCS)
-	@ (set -x; ar rcs $(NAME).a $(OBJS)) >> $(LOG) 2>&1
+	@ (set -x; ar rcs $(NAME) $(OBJS)) >> $(LOG) 2>&1
 
 $(PATH_OBJ)/%.o : $(PATH_SRC)/*/%.c $(INCS)
 	@ (set -x; $(COMP) $(COMP_FLAG) $(COMP_ADD) -c $< -o $@) >> $(LOG) 2>&1
@@ -52,9 +51,8 @@ clean:
 	@ echo "$(_INFO) Deleted files and directory"
 
 fclean: clean
-	@ $(RM) -rf $(NAME).a
+	@ $(RM) -rf $(NAME)
 	@ $(RM) -rf $(PATH_LOG)
-
 re: fclean all
 
 run: $(NAME)

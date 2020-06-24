@@ -10,4 +10,8 @@ void	ft_putnchar(char c, int n);
 void	ft_putnchar_fd(char c, int n, int fd);
 void	ft_putstr(char *c);
 void	ft_putstr_fd(char *c, int fd);
+void	ft_putnbr(long n);
+void	ft_putnbr_fd(long n, int fd);
+void	ft_putnbr_base(long n, char *base);
+void	ft_putnbr_base_fd(long n, int fd, char *base);
 #endif

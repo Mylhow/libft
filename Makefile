@@ -14,7 +14,7 @@ SRCS_CTYPE	=	$(addprefix $(PATH_SRC)/ctype/, ft_isalnum.c ft_isalpha.c ft_isdigi
 SRCS_GNL	=	$(addprefix $(PATH_SRC)/gnl/, get_next_line.c get_next_line_utils.c)
 SRCS_LIST	=	$(addprefix $(PATH_SRC)/list/, ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c)
 SRCS_MEM	=	$(addprefix $(PATH_SRC)/mem/, ft_calloc.c ft_wrmalloc.c)
-SRCS_PUT	=	$(addprefix $(PATH_SRC)/put/, ft_putchar.c)
+SRCS_PUT	=	$(addprefix $(PATH_SRC)/put/, ft_putchar.c ft_putstr.c)
 SRCS_NUMBER	=	$(addprefix $(PATH_SRC)/number/, ft_atoi.c ft_digit.c ft_itoa.c)
 SRCS_STRING	=	$(addprefix $(PATH_SRC)/string/, ft_bzero.c ft_chartostr.c ft_memchr.c ft_memcpy.c \
 					ft_memset.c ft_strcat.c ft_strcmp.c ft_strichr.c ft_strlen.c ft_substr.c ft_charstr.c \

@@ -51,8 +51,6 @@ char	*ft_strmjoin(char *format, ...)
 			tmp = ft_strjoin(ret, ft_chartostr(va_arg(ap, int)));
 		else if (ft_isspace(*format))
 			tmp = ft_strjoin(ret, ft_chartostr(*format));
-		else
-			return (0);
 		wrfree(ret);
 		ret = tmp;
 		format++;

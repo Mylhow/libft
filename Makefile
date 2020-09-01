@@ -22,8 +22,8 @@ SRCS_STRING	=	$(addprefix $(PATH_SRC)/string/, ft_bzero.c ft_chartostr.c ft_memc
 					ft_strncmp.c ft_strlcpy.c)
 SRCS		=	$(SRCS_CTYPE) $(SRCS_GNL) $(SRCS_LIST) $(SRCS_MEM) $(SRCS_PUT) $(SRCS_NUMBER) $(SRCS_STRING)
 OBJS		=	$(addprefix $(PATH_OBJ)/, $(notdir $(SRCS:.c=.o)))
-INCS		=	$(wildcard $(PATH_INC)/*.h)
-LOG			=	$(addprefix $(PATH_LOG)/, $(patsubst %.a.log,%.log,$(NAME).log))
+INCS		=	$(addprefix $(PATH_INC)/, libft.h libft_ctype.h libft_gnl.h libft_list.h libft_mem.h libft_number.h libft_put.h libft_string.h)
+LOG			=	$(PATH_LOG)/libft.log
 
 # Commands of compilation
 COMP		=	clang
@@ -42,11 +42,10 @@ _SUCCESS	=	[$(_GREEN)SUCCESS$(_RESET)]
 
 # Functions
 all:	init $(NAME)
-	@ echo "$(_SUCCESS) Compilation done in $$(($$(date +%S)-$$(cat  logs/time.log)))s"
+	@ echo "$(_SUCCESS) Compilation done"
 	@ $(RM) -rf $(PATH_LOG)/time.log
 
 init:
-	@ date +%S > $(addprefix $(PATH_LOG)/, time.log)
 	@ $(shell mkdir -p $(PATH_OBJ) $(PATH_LOG))
 
 $(NAME): $(OBJS) $(INCS)
@@ -65,6 +64,3 @@ fclean: clean
 	@ $(RM) -rf $(PATH_LOG)
 
 re: fclean all
-
-run: $(NAME)
-	@ (set -x; $(COMP) $(COMP_FLAG) $(COMP_ADD) main.c -L. -lft) >> $(LOG) 2>&1

@@ -12,7 +12,7 @@ int		ft_atoi(const char *str)
 	result = 0;
 	while (*(str + i) == ' ' || (*(str + i) >= '\t' && *(str + i) <= '\r'))
 		i++;
-	if (*(str + i) == '+' || *(str + i) == '-')
+	while (*(str + i) == '+' || *(str + i) == '-')
 		(*(str + i++) == '-') ? sign = -1 : 0;
 	while (ft_isdigit(*(str + i)))
 	{

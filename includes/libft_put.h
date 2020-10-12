@@ -5,6 +5,7 @@
 #include <unistd.h>
 
 void	ft_putchar(char c);
+int     ft_putchar_int(int c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnchar(char c, int n);
 void	ft_putnchar_fd(char c, int n, int fd);

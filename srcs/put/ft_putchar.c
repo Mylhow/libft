@@ -5,6 +5,12 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
+int     ft_putchar_int(int c)
+{
+    write(1, &c, 1);
+    return (c);
+}
+
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);

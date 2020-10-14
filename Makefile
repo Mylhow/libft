@@ -13,6 +13,7 @@ PATH_LOG	=	logs
 SRCS_CTYPE	    =	$(addprefix $(PATH_SRC)/ctype/, ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_islower.c ft_isprint.c ft_isspace.c ft_isupper.c ft_isxdigit.c ft_tolower.c ft_toupper.c)
 SRCS_GNL	    =	$(addprefix $(PATH_SRC)/gnl/, get_next_line.c get_next_line_utils.c)
 SRCS_LIST	    =	$(addprefix $(PATH_SRC)/list/, ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c)
+SRCS_HASH       =   $(addprefix $(PATH_SRC)/hash/, ft_hashnew.c)
 SRCS_MEM	    =	$(addprefix $(PATH_SRC)/mem/, ft_calloc.c ft_wrmalloc.c)
 SRCS_PUT	    =	$(addprefix $(PATH_SRC)/put/, ft_putchar.c ft_putstr.c)
 SRCS_NUMBER	    =	$(addprefix $(PATH_SRC)/number/, ft_atoi.c ft_digit.c ft_itoa.c)
@@ -28,7 +29,7 @@ SRCS_PF_UTILS	=	$(addprefix $(PATH_SRC)/printf/utils/, ft_putnbr_format.c ft_put
 SRCS_PF_CORE	=	$(addprefix $(PATH_SRC)/printf/core/, pf_conv.c pf_utils.c ft_printf.c)
 
 
-SRCS		    =	$(SRCS_CTYPE) $(SRCS_GNL) $(SRCS_LIST) $(SRCS_MEM) $(SRCS_PUT) $(SRCS_NUMBER) $(SRCS_STRING) $(SRCS_PF_CORE) $(SRCS_PF_DISP) $(SRCS_PF_LISTS) $(SRCS_PF_UTILS)
+SRCS		    =	$(SRCS_CTYPE) $(SRCS_GNL) $(SRCS_LIST) $(SRCS_HASH) $(SRCS_MEM) $(SRCS_PUT) $(SRCS_NUMBER) $(SRCS_STRING) $(SRCS_PF_CORE) $(SRCS_PF_DISP) $(SRCS_PF_LISTS) $(SRCS_PF_UTILS)
 OBJS		    =	$(addprefix $(PATH_OBJ)/, $(notdir $(SRCS:.c=.o)))
 INCS		    =	$(addprefix $(PATH_INC)/, libft.h libft_ctype.h libft_gnl.h libft_list.h libft_mem.h libft_number.h libft_put.h libft_string.h)
 LOG			    =	$(PATH_LOG)/libft.log

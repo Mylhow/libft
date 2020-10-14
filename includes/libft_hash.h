@@ -10,4 +10,5 @@ typedef struct      s_hash
 }               t_hash;
 
 t_hash	*ft_hashnew(char *key, void *value);
+void	ft_hashprint(t_hash *hash, char *s);
 #endif

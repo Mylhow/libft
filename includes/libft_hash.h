@@ -11,4 +11,7 @@ typedef struct      s_hash
 
 t_hash	*ft_hashnew(char *key, void *value);
 void	ft_hashprint(t_hash *hash, char *s);
+t_hash	*ft_hashlast(t_hash *hash);
+void	ft_hashadd_back(t_hash **hash, t_hash *new);
+void	ft_hashadd_front(t_hash **hash, t_hash *new);
 #endif

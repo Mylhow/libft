@@ -14,3 +14,13 @@ void	ft_putstr_fd(char *c, int fd)
 		return ;
 	write(fd, c, ft_strlen(c));
 }
+
+
+void	ft_putnstr_fd(char *str, int n, int fd)
+{
+	int i;
+
+	i = -1;
+	while (++i < n)
+		ft_putchar_fd(str[i], fd);
+}

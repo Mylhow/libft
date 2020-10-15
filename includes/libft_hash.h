@@ -7,6 +7,10 @@ typedef struct      s_hash
 	struct s_hash	*head;
 	struct s_hash	*before;
 	struct s_hash	*next;
+	void			(*show)(struct s_hash *, char *);
+	struct s_hash	*(*last)(struct s_hash *);
+	void 			(*add_back)(struct  s_hash **, struct s_hash *);
+	void 			(*add_front)(struct  s_hash **, struct s_hash *);
 }               t_hash;
 
 t_hash	*ft_hashnew(char *key, void *value);

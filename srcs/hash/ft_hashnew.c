@@ -17,5 +17,7 @@ t_hash	*ft_hashnew(char *key, void *value)
 	ptr->add_back = ft_hashadd_back;
 	ptr->add_front = ft_hashadd_front;
 	ptr->find = ft_hashfind;
+	ptr->delkey = ft_hashdel_key;
+	ptr->delhash = ft_hashdel_hash;
 	return (ptr);
 }

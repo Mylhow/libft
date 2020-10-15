@@ -12,6 +12,8 @@ typedef struct      s_hash
 	void 			(*add_back)(struct  s_hash **, struct s_hash *);
 	void 			(*add_front)(struct  s_hash **, struct s_hash *);
 	struct s_hash	*(*find)(struct  s_hash *, char *);
+	void 			(*delkey)(struct s_hash **, char *);
+	void 			(*delhash)(struct s_hash **, struct s_hash *);
 }               t_hash;
 
 t_hash	*ft_hashnew(char *key, void *value);
@@ -20,4 +22,6 @@ t_hash	*ft_hashlast(t_hash *hash);
 void	ft_hashadd_back(t_hash **hash, t_hash *new);
 void	ft_hashadd_front(t_hash **hash, t_hash *new);
 t_hash	*ft_hashfind(t_hash *hash, char *key);
+void 	ft_hashdel_key(t_hash **hash, char *key);
+void 	ft_hashdel_hash(t_hash **hash, t_hash *delete);
 #endif

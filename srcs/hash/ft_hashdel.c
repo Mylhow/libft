@@ -21,6 +21,31 @@ static void 	ft_delete(t_hash *hash)
 	wrfree(hash);
 }
 
+static void 	ft_delete_elem(t_hash **hash, t_hash *current)
+{
+	if (!current->before) //Si, premier element
+	{
+		if (current->next) //Si, un next existe
+		{
+			*hash = current->next;
+			current->next->before = 0;
+			ft_head_change(hash);
+		}
+		else {
+			ft_delete(current);
+			*hash = 0;
+			return;
+		}
+	}
+	else
+	{
+		current->before->next = current->next;
+		if (current->next)
+			current->next->before = current->before;
+		ft_delete(current);
+	}
+}
+
 void 	ft_hashdel_key(t_hash **hash, char *key)
 {
 	t_hash *current;
@@ -30,23 +55,7 @@ void 	ft_hashdel_key(t_hash **hash, char *key)
 	{
 		if (ft_strcmp(current->key, key) == 0)
 		{
-			if (!current->before) //Si, premier element
-			{
-				if (current->next) //Si, un next existe
-				{
-					*hash = current->next;
-					current->next->before = 0;
-					ft_head_change(hash);
-				}
-				else
-					ft_delete(current);
-			}
-			else
-			{
-				current->before->next = current->next;
-				current->next->before = current->before;
-				ft_delete(current);
-			}
+			ft_delete_elem(hash, current);
 		}
 		current = current->next;
 	}
@@ -61,22 +70,7 @@ void 	ft_hashdel_hash(t_hash **hash, t_hash *del)
 	{
 		if (current == del)
 		{
-			if (!current->before) //Si, premier element
-			{
-				if (current->next) //Si, un next existe
-				{
-					*hash = current->next;
-					ft_head_change(hash);
-				}
-				else
-					ft_delete(current);
-			}
-			else
-			{
-				current->before->next = current->next;
-				current->next->before = current->before;
-				ft_delete(current);
-			}
+			ft_delete_elem(hash, current);
 		}
 		current = current->next;
 	}

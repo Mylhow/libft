@@ -1,5 +1,8 @@
 #ifndef LIBFT_HASH_H
 # define LIBFT_HASH_H
+
+#include <stddef.h>
+
 typedef struct      s_hash
 {
 	char			*key;
@@ -15,6 +18,7 @@ typedef struct      s_hash
 	void 			(*delkey)(struct s_hash **, char *);
 	void 			(*delhash)(struct s_hash **, struct s_hash *);
 	void 			(*clear)(struct s_hash **);
+	size_t			(*length)(struct s_hash *);
 }               t_hash;
 
 t_hash	*ft_hashnew(char *key, void *value);
@@ -26,4 +30,5 @@ t_hash	*ft_hashfind(t_hash *hash, char *key);
 void 	ft_hashdel_key(t_hash **hash, char *key);
 void 	ft_hashdel_hash(t_hash **hash, t_hash *delete);
 void	ft_hashclear(t_hash **hash);
+size_t	ft_hashlen(t_hash *hash);
 #endif

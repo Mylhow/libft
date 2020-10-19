@@ -1,4 +1,4 @@
-#include "libft_string.h"
+#include "libft_mem.h"
 
 void	*ft_memrchr(const void *s, int c, size_t n)
 {

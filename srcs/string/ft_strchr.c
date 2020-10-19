@@ -1,3 +1,4 @@
+#include "libft_mem.h"
 #include "libft_string.h"
 
 char	*ft_strchr(const char *s, int c)

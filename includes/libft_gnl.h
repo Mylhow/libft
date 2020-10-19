@@ -1,6 +1,7 @@
 #ifndef LIBFT_GNL_H
 # define LIBFT_GNL_H
-# include "libft.h"
+
+# include "libft_define.h"
 # include "libft_string.h"
 # include "libft_mem.h"
 # include <unistd.h>

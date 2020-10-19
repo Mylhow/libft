@@ -1,7 +1,7 @@
 #ifndef LIBFT_MEM_H
 # define LIBFT_MEM_H
-# include "libft.h"
 
+# include "libft_define.h"
 # include <stdlib.h>
 
 void	*wrmalloc(unsigned long size);

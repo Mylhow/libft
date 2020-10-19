@@ -1,6 +1,7 @@
 #ifndef LIBFT_NUMBER_H
 # define LIBFT_NUMBER_H
-# include "libft.h"
+
+# include "libft_define.h"
 
 int		ft_atoi(const char *str);
 char	*ft_itoa_base(int n, char *base);

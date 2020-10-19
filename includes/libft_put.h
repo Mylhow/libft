@@ -1,7 +1,7 @@
 #ifndef LIBFT_PUT_H
 # define LIBFT_PUT_H
 
-#include "libft.h"
+# include "libft_define.h"
 #include <unistd.h>
 
 void	ft_putchar(char c);

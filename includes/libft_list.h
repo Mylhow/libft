@@ -1,6 +1,7 @@
 #ifndef LIBFT_LIST_H
 # define LIBFT_LIST_H
-# include "libft.h"
+
+# include "libft_define.h"
 
 typedef struct	s_list
 {

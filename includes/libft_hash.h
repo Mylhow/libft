@@ -31,4 +31,5 @@ void 	ft_hashdel_key(t_hash **hash, char *key);
 void 	ft_hashdel_hash(t_hash **hash, t_hash *delete);
 void	ft_hashclear(t_hash **hash);
 size_t	ft_hashlen(t_hash *hash);
+t_hash	*ft_hashdup(t_hash *hash);
 #endif

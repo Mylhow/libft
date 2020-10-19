@@ -17,7 +17,7 @@ typedef struct      s_hash
 	struct s_hash	*(*find)(struct  s_hash *, char *);
 	void 			(*delkey)(struct s_hash **, char *);
 	void 			(*delhash)(struct s_hash **, struct s_hash *);
-	void 			(*clear)(struct s_hash **);
+	void 			(*hclear)(struct s_hash **);
 	size_t			(*length)(struct s_hash *);
 }               t_hash;
 

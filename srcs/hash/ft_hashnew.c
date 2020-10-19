@@ -19,7 +19,7 @@ t_hash	*ft_hashnew(char *key, void *value)
 	ptr->find = ft_hashfind;
 	ptr->delkey = ft_hashdel_key;
 	ptr->delhash = ft_hashdel_hash;
-	ptr->clear = ft_hashclear;
+	ptr->hclear = ft_hashclear;
 	ptr->length = ft_hashlen;
 	return (ptr);
 }

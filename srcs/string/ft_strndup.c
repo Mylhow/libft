@@ -12,6 +12,6 @@ char	*ft_strndup(const char *s1, size_t n)
 	if (!(ptr = wrmalloc((n + 1) * sizeof(char))))
 		return (NULL);
 	ft_memcpy(ptr, s1, n);
-	ptr[n + 1] = '\0';
+	ptr[n] = '\0';
 	return (ptr);
 }

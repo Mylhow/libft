@@ -19,19 +19,19 @@ static void	disp_ptr_2(t_pf *tpf, char *base, unsigned long val)
 {
 	if (tpf->fmoins == FALSE)
 	{
-		ft_putnchar_fd(' ', tpf->whitespace, 1);
-		(tpf->specifier == 'p') ? ft_putstr_fd("0x", 1) : 0;
-		ft_putnchar_fd('0', tpf->zero, 1);
+		ft_putnchar_fd(' ', tpf->whitespace, tpf->fd);
+		(tpf->specifier == 'p') ? ft_putstr_fd("0x", tpf->fd) : 0;
+		ft_putnchar_fd('0', tpf->zero, tpf->fd);
 		if (!(tpf->fprecision == 1 && val == 0 && tpf->vprecision <= 0))
-			ft_putnbr_ul_base_fd(val, 1, base);
+			ft_putnbr_ul_base_fd(val, tpf->fd, base);
 	}
 	else
 	{
-		(tpf->specifier == 'p') ? ft_putstr_fd("0x", 1) : 0;
-		ft_putnchar_fd('0', tpf->zero, 1);
+		(tpf->specifier == 'p') ? ft_putstr_fd("0x", tpf->fd) : 0;
+		ft_putnchar_fd('0', tpf->zero, tpf->fd);
 		if (!(tpf->fprecision == 1 && val == 0 && tpf->vprecision <= 0))
-			ft_putnbr_ul_base_fd(val, 1, base);
-		ft_putnchar_fd(' ', tpf->whitespace, 1);
+			ft_putnbr_ul_base_fd(val, tpf->fd, base);
+		ft_putnchar_fd(' ', tpf->whitespace, tpf->fd);
 	}
 }
 

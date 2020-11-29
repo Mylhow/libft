@@ -32,12 +32,12 @@ void	disp_str(t_pf *tpf)
 	length_calc(tpf, 2, tronc, tpf->whitespace);
 	if (tpf->fmoins == FALSE)
 	{
-		ft_putnchar_fd(' ', tpf->whitespace, 1);
-		ft_putnstr_fd(value, tronc, 1);
+		ft_putnchar_fd(' ', tpf->whitespace, tpf->fd);
+		ft_putnstr_fd(value, tronc, tpf->fd);
 	}
 	else
 	{
-		ft_putnstr_fd(value, tronc, 1);
-		ft_putnchar_fd(' ', tpf->whitespace, 1);
+		ft_putnstr_fd(value, tronc, tpf->fd);
+		ft_putnchar_fd(' ', tpf->whitespace, tpf->fd);
 	}
 }

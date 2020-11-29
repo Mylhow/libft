@@ -21,49 +21,49 @@ static void		disp_int_show_fmoins(t_pf *tpf, char *base, long val)
 	if (val < 0)
 	{
 		val *= -1;
-		ft_putchar_fd('-', 1);
+		ft_putchar_fd('-', tpf->fd);
 	}
 	else if (tpf->fplus)
-		ft_putchar_fd('+', 1);
+		ft_putchar_fd('+', tpf->fd);
 	if (tpf->fdiese && val != 0)
-		(tpf->specifier == 'x') ? ft_putstr_fd("0x", 1) : ft_putstr_fd("0X", 1);
-	ft_putnchar_fd('0', tpf->zero, 1);
+		(tpf->specifier == 'x') ? ft_putstr_fd("0x", 1) : ft_putstr_fd("0X", tpf->fd);
+	ft_putnchar_fd('0', tpf->zero, tpf->fd);
 	if (tpf->fapostrophe)
 	{
 		if (!(tpf->fprecision == 1 && val == 0 && tpf->vprecision <= 0))
-			ft_putnbr_format_fd(val, 1);
+			ft_putnbr_format_fd(val, tpf->fd);
 	}
 	else
 	{
 		if (!(tpf->fprecision == 1 && val == 0 && tpf->vprecision <= 0))
-			ft_putnbr_ul_base_fd(val, 1, base);
+			ft_putnbr_ul_base_fd(val, tpf->fd, base);
 	}
-	ft_putnchar_fd(' ', tpf->whitespace, 1);
+	ft_putnchar_fd(' ', tpf->whitespace, tpf->fd);
 }
 
 static void		disp_int_show_no_fmoins(t_pf *tpf, char *base, long val)
 {
 
-	ft_putnchar_fd(' ', tpf->whitespace, 1);
+	ft_putnchar_fd(' ', tpf->whitespace, tpf->fd);
 	if (tpf->fdiese && val != 0)
-		(tpf->specifier == 'x') ? ft_putstr_fd("0x", 1) : ft_putstr_fd("0X", 1);
+		(tpf->specifier == 'x') ? ft_putstr_fd("0x", tpf->fd) : ft_putstr_fd("0X", tpf->fd);
 	if (val < 0)
 	{
 		val *= -1;
-		ft_putchar_fd('-', 1);
+		ft_putchar_fd('-', tpf->fd);
 	}
 	else if (tpf->fplus)
-		ft_putchar_fd('+', 1);
-	ft_putnchar_fd('0', tpf->zero, 1);
+		ft_putchar_fd('+', tpf->fd);
+	ft_putnchar_fd('0', tpf->zero, tpf->fd);
 	if (tpf->fapostrophe)
 	{
 		if (!(tpf->fprecision == 1 && val == 0 && tpf->vprecision <= 0))
-			ft_putnbr_format_fd(val, 1);
+			ft_putnbr_format_fd(val, tpf->fd);
 	}
 	else
 	{
 		if (!(tpf->fprecision == 1 && val == 0 && tpf->vprecision <= 0))
-			ft_putnbr_ul_base_fd(val, 1, base);
+			ft_putnbr_ul_base_fd(val, tpf->fd, base);
 	}
 }
 

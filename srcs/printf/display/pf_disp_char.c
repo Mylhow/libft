@@ -25,12 +25,12 @@ void	disp_char(t_pf *tpf)
 	length_calc(tpf, 1, whitespace + 1);
 	if (tpf->fmoins == FALSE)
 	{
-		ft_putnchar_fd(' ', whitespace, 1);
-		ft_putchar_fd(value, 1);
+		ft_putnchar_fd(' ', whitespace, tpf->fd);
+		ft_putchar_fd(value, tpf->fd);
 	}
 	else
 	{
-		ft_putchar_fd(value, 1);
-		ft_putnchar_fd(' ', whitespace, 1);
+		ft_putchar_fd(value, tpf->fd);
+		ft_putnchar_fd(' ', whitespace, tpf->fd);
 	}
 }

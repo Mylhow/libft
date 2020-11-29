@@ -33,6 +33,7 @@ typedef struct	s_pf
 	int				zero;
 	char			specifier;
 	int				length;
+	int             fd;
 }				t_pf;
 
 void			ft_putnbr_format_fd(long n, int fd);
@@ -41,8 +42,10 @@ int				ft_digit_format_base(long num, char *base);
 int				ft_digit_ul_base(unsigned long num, char *base);
 int				ft_printf(const char *str,
 				...) __attribute__((format(printf,1,2)));
+int             ft_fprintf(int fd, const char *str,
+				...) __attribute__((format(printf,2,3)));
 int				pf_conv(t_pf *tpf, const char *format);
-void			pf_initlst(va_list *ap, t_pf *tpf);
+void			pf_initlst(va_list *ap, t_pf *tpf, int fd);
 void			disp_char(t_pf *tpf);
 void			disp_str(t_pf *tpf);
 void			disp_int(t_pf *tpf, char *base);

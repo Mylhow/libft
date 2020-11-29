@@ -14,7 +14,7 @@
 #include "libft_printf.h"
 #include "libft.h"
 
-void	pf_initlst(va_list *ap, t_pf *tpf)
+void	pf_initlst(va_list *ap, t_pf *tpf, int fd)
 {
 	tpf->ap = ap;
 	tpf->fmoins = FALSE;
@@ -30,4 +30,5 @@ void	pf_initlst(va_list *ap, t_pf *tpf)
 	tpf->zero = 0;
 	tpf->specifier = ' ';
 	tpf->width = 0;
+	tpf->fd = fd;
 }

@@ -25,15 +25,15 @@ void	disp_percent(t_pf *tpf)
 		while (nb_space--)
 		{
 			if (tpf->fzero || tpf->zero == -1)
-				ft_putchar_fd('0', 1);
+				ft_putchar_fd('0', tpf->fd);
 			else
-				ft_putchar_fd(' ', 1);
+				ft_putchar_fd(' ', tpf->fd);
 		}
-		ft_putchar_fd('%', 1);
+		ft_putchar_fd('%', tpf->fd);
 	}
 	else
 	{
-		ft_putchar_fd('%', 1);
-		ft_putnchar_fd(' ', nb_space, 1);
+		ft_putchar_fd('%', tpf->fd);
+		ft_putnchar_fd(' ', nb_space, tpf->fd);
 	}
 }

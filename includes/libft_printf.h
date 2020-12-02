@@ -1,14 +1,13 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   ft_printf.h                                      .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: dgascon <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/11/20 05:36:15 by dgascon      #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/02 22:41:12 by dgascon     ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft_printf.h                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgascon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/02 09:43:39 by dgascon           #+#    #+#             */
+/*   Updated: 2020/12/02 09:44:13 by dgascon          ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_PRINTF_H
@@ -18,22 +17,22 @@
 
 typedef struct	s_pf
 {
-	va_list			*ap;
-	int				fzero;
-	int				fstars;
-	int				fmoins;
-	int				fprecision;
-	int				fdiese;
-	int				fplus;
-	int				fspace;
-	int				fapostrophe;
-	int				vprecision;
-	int				width;
-	int				whitespace;
-	int				zero;
-	char			specifier;
-	int				length;
-	int             fd;
+	va_list		*ap;
+	int			fzero;
+	int			fstars;
+	int			fmoins;
+	int			fprecision;
+	int			fdiese;
+	int			fplus;
+	int			fspace;
+	int			fapostrophe;
+	int			vprecision;
+	int			width;
+	int			whitespace;
+	int			zero;
+	char		specifier;
+	int			length;
+	int			fd;
 }				t_pf;
 
 void			ft_putnbr_format_fd(long n, int fd);
@@ -42,7 +41,7 @@ int				ft_digit_format_base(long num, char *base);
 int				ft_digit_ul_base(unsigned long num, char *base);
 int				ft_printf(const char *str,
 				...) __attribute__((format(printf,1,2)));
-int             ft_fprintf(int fd, const char *str,
+int				ft_fprintf(int fd, const char *str,
 				...) __attribute__((format(printf,2,3)));
 int				pf_conv(t_pf *tpf, const char *format);
 void			pf_initlst(va_list *ap, t_pf *tpf, int fd);

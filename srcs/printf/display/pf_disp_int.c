@@ -1,14 +1,13 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   pf_disp_int.c                                    .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: dgascon <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/16 15:05:40 by dgascon      #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/04 05:20:32 by dgascon     ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pf_disp_int.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgascon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/02 10:16:27 by dgascon           #+#    #+#             */
+/*   Updated: 2020/12/02 10:16:28 by dgascon          ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_printf.h"
@@ -26,7 +25,8 @@ static void		disp_int_show_fmoins(t_pf *tpf, char *base, long val)
 	else if (tpf->fplus)
 		ft_putchar_fd('+', tpf->fd);
 	if (tpf->fdiese && val != 0)
-		(tpf->specifier == 'x') ? ft_putstr_fd("0x", 1) : ft_putstr_fd("0X", tpf->fd);
+		(tpf->specifier == 'x') ? ft_putstr_fd("0x", 1) :
+			ft_putstr_fd("0X", tpf->fd);
 	ft_putnchar_fd('0', tpf->zero, tpf->fd);
 	if (tpf->fapostrophe)
 	{
@@ -43,10 +43,10 @@ static void		disp_int_show_fmoins(t_pf *tpf, char *base, long val)
 
 static void		disp_int_show_no_fmoins(t_pf *tpf, char *base, long val)
 {
-
 	ft_putnchar_fd(' ', tpf->whitespace, tpf->fd);
 	if (tpf->fdiese && val != 0)
-		(tpf->specifier == 'x') ? ft_putstr_fd("0x", tpf->fd) : ft_putstr_fd("0X", tpf->fd);
+		(tpf->specifier == 'x') ? ft_putstr_fd("0x", tpf->fd) :
+			ft_putstr_fd("0X", tpf->fd);
 	if (val < 0)
 	{
 		val *= -1;

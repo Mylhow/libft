@@ -1,5 +1,17 @@
-#ifndef LIBFTSTRING_H
-# define LIBFTSTRING_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft_string.h                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgascon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/02 09:43:42 by dgascon           #+#    #+#             */
+/*   Updated: 2020/12/02 09:44:25 by dgascon          ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef LIBFT_STRING_H
+# define LIBFT_STRING_H
 
 # include "libft_define.h"
 # include <stddef.h>

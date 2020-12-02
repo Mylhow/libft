@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgascon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/02 09:45:40 by dgascon           #+#    #+#             */
+/*   Updated: 2020/12/02 09:45:40 by dgascon          ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft_put.h"
 #include "libft_string.h"
 
@@ -14,7 +26,6 @@ void	ft_putstr_fd(char *c, int fd)
 		return ;
 	write(fd, c, ft_strlen(c));
 }
-
 
 void	ft_putnstr_fd(char *str, int n, int fd)
 {

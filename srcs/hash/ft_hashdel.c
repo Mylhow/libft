@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_hashdel.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgascon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/02 09:45:02 by dgascon           #+#    #+#             */
+/*   Updated: 2020/12/02 09:45:03 by dgascon          ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft_hash.h"
 #include "libft_string.h"
 #include "libft_mem.h"
 
-static void 	ft_head_change(t_hash **hash)
+static void		ft_head_change(t_hash **hash)
 {
 	t_hash *tmp;
 
@@ -14,27 +26,28 @@ static void 	ft_head_change(t_hash **hash)
 	}
 }
 
-static void 	ft_delete(t_hash *hash)
+static void		ft_delete(t_hash *hash)
 {
 	wrfree(hash->value);
 	wrfree(hash->key);
 	wrfree(hash);
 }
 
-static void 	ft_delete_elem(t_hash **hash, t_hash *current)
+static void		ft_delete_elem(t_hash **hash, t_hash *current)
 {
-	if (!current->before) //Si, premier element
+	if (!current->before)
 	{
-		if (current->next) //Si, un next existe
+		if (current->next)
 		{
 			*hash = current->next;
 			current->next->before = 0;
 			ft_head_change(hash);
 		}
-		else {
+		else
+		{
 			ft_delete(current);
 			*hash = 0;
-			return;
+			return ;
 		}
 	}
 	else
@@ -46,7 +59,7 @@ static void 	ft_delete_elem(t_hash **hash, t_hash *current)
 	}
 }
 
-void 	ft_hashdel_key(t_hash **hash, char *key)
+void			ft_hashdel_key(t_hash **hash, char *key)
 {
 	t_hash *current;
 
@@ -61,7 +74,7 @@ void 	ft_hashdel_key(t_hash **hash, char *key)
 	}
 }
 
-void 	ft_hashdel_hash(t_hash **hash, t_hash *del)
+void			ft_hashdel_hash(t_hash **hash, t_hash *del)
 {
 	t_hash *current;
 

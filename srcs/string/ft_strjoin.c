@@ -27,6 +27,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (ft_strdup(s2));
 	if (s2 == 0 && s1 != 0)
 		return (ft_strdup(s1));
+	if (s2 == 0 && s1 == 0)
+		return (0);
 	sizes1 = ft_strlen(s1);
 	sizes2 = ft_strlen(s2);
 	if ((s1 == 0 && s2 == 0)

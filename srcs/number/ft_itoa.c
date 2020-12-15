@@ -24,7 +24,7 @@ char			*ft_itoa_base(int n, char *base)
 	sizebase = ft_strlen(base);
 	sign = 1;
 	i = ft_digit_base(n, base);
-	if (!(str = wrmalloc((i + 1) * sizeof(char))))
+	if (!(str = ft_calloc((i + 1), sizeof(char))))
 		return (NULL);
 	if (n < 0)
 	{

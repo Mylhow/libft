@@ -45,7 +45,7 @@ void			*wrmalloc(unsigned long size)
 	{
 		free(buffer);
 		wrdestroy();
-		return (0);
+		exit(1);
 	}
 	new_elem->content = buffer;
 	new_elem->next = 0;

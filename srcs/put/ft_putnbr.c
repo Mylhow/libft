@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft_put.h"
+#include "libft_string.h"
 
 void	ft_putnbr(long n)
 {
